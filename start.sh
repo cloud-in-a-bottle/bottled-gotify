@@ -33,7 +33,13 @@ export GOTIFY_UPLOADEDIMAGESDIR="$PERSIST/images"
 export GOTIFY_PLUGINSDIR="$PERSIST/plugins"
 export GOTIFY_REGISTRATION=false
 
-# Trust OpenHost router proxy for X-Forwarded-For headers
-export GOTIFY_SERVER_TRUSTEDPROXIES="[10.0.0.0/8, 172.16.0.0/12, 192.168.0.0/16, 127.0.0.1]"
+# Trust OpenHost router proxy for X-Forwarded-For/Host/Proto headers
+export GOTIFY_SERVER_TRUSTEDPROXIES='[10.0.0.0/8,172.16.0.0/12,192.168.0.0/16,127.0.0.1]'
+
+# Allow CORS from the external domain (browser sends Origin header through proxy)
+export GOTIFY_SERVER_CORS_ALLOWORIGINS='[.+]'
+export GOTIFY_SERVER_CORS_ALLOWMETHODS='[GET,POST,PUT,DELETE,PATCH,OPTIONS]'
+export GOTIFY_SERVER_CORS_ALLOWHEADERS='[Authorization,Content-Type,X-Gotify-Key]'
+export GOTIFY_SERVER_STREAM_ALLOWEDORIGINS='[.+]'
 
 exec /app/gotify-app
