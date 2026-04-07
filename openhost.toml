@@ -1,0 +1,19 @@
+[app]
+name = "gotify"
+version = "0.1.0"
+description = "Gotify self-hosted push notification server"
+
+[runtime.container]
+image = "Dockerfile"
+port = 8080
+
+[routing]
+health_check = "/version"
+public_paths = ["/"]
+
+[resources]
+memory_mb = 256
+cpu_millicores = 250
+
+[data]
+app_data = true
