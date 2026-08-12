@@ -1,4 +1,4 @@
-Gotify self-hosted push notification server for OpenHost. Runs as a single Docker container with SQLite.
+Gotify self-hosted push notification server for Cloud in a Bottle. Runs as a single Docker container with SQLite.
 
 ## How it works
 
@@ -46,4 +46,4 @@ Needs ~256MB RAM and 0.25 CPU cores. Very lightweight.
 
 - `Dockerfile` — extends official Gotify server image
 - `start.sh` — configures Gotify via env vars, generates admin password, launches server
-- `openhost.toml` — OpenHost app manifest
+- `openhost.toml` — Cloud in a Bottle app manifest
